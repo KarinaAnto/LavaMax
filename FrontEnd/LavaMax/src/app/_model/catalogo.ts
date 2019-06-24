@@ -1,6 +1,8 @@
+import { Local } from './local';
+
 export class Catalogo {
-    id:number
-    nombre:string
-    tipo:string
-    Local:[]
+    id:number;
+    nombre:string;
+    tipo:string;
+    local:Local
 }

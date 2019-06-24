@@ -1,15 +1,88 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <app-toolbar></app-toolbar>
-  
-  <router-outlet>
+<div class="example-container">
+  <mat-toolbar color="primary" class="example-toolbar">
+      <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+          <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+      </button>
 
-  </router-outlet>
+      <h1 class="example-app-name">LavaMax</h1>
 
+      <span class="example-spacer"></span>
 
-  <!-- <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/UPC_logo_transparente.png/240px-UPC_logo_transparente.png"> -->
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+      </button>
+
+      <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/perfil">
+              <mat-icon>account_box</mat-icon>
+              <span>Mi Perfil</span>
+          </button>
+          <button mat-menu-item routerLink="/login" (click)="sidenav.opened = false">
+              <mat-icon>exit_to_app</mat-icon>
+              <span>Cerrar Sesión</span>
+          </button>
+      </mat-menu>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container" >
+      <mat-sidenav #sidenav mode="side" style="width: 200px" >
+
+          <button mat-menu-item (click)="sidenav.toggle()" routerLink="/buscar" style="cursor: pointer" >
+              <mat-icon>search</mat-icon>
+              <span>Buscar</span>
+          </button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item (click)="sidenav.toggle()" routerLink="/consulta" style="cursor: pointer" >
+              <mat-icon>insert_drive_file</mat-icon>
+              <span>Registrar</span>
+          </button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item (click)="sidenav.toggle()" routerLink="/consulta-especial" style="cursor: pointer" >
+              <mat-icon>insert_drive_file</mat-icon>
+              <span>Registrar E.</span>
+          </button>
+          <!-- ////////////// -->
+          <mat-divider></mat-divider>
+          <button mat-menu-item (click)="sidenav.toggle()" routerLink="/especialidad" style="cursor: pointer" >
+              <mat-icon>star_rate</mat-icon>
+              <span>Lavandería</span>
+          </button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item (click)="sidenav.toggle()" routerLink="/especialidad" style="cursor: pointer" >
+              <mat-icon>star_rate</mat-icon>
+              <span>Locales</span>
+          </button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item (click)="sidenav.toggle()" routerLink="/especialidad" style="cursor: pointer" >
+              <mat-icon>star_rate</mat-icon>
+              <span>Publicaciones</span>
+          </button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item (click)="sidenav.toggle()" routerLink="/medico" style="cursor: pointer" >
+              <mat-icon>healing</mat-icon>
+              <span>Clientes</span>
+          </button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item (click)="sidenav.toggle()" routerLink="/examen" style="cursor: pointer" >
+              <mat-icon>assignment</mat-icon>
+              <span>Servicios</span>
+          </button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item (click)="sidenav.toggle()" routerLink="/paciente" style="cursor: pointer" >
+              <mat-icon>accessibility</mat-icon>
+              <span>Catálogos</span>
+          </button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item (click)="sidenav.toggle()" routerLink="/reporte" style="cursor: pointer" >
+              <mat-icon>assessment</mat-icon>
+              <span>Productos</span>
+          </button>
+      </mat-sidenav>
+
+      <mat-sidenav-content>
+          <router-outlet></router-outlet>
+      </mat-sidenav-content>
+
+  </mat-sidenav-container>
 </div>
-

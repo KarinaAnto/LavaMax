@@ -1,8 +1,9 @@
-import { Local } from 'protractor/built/driverProviders';
+import { Local } from './local';
+import { Cliente } from './cliente';
 
 export class Localcliente {
-    Cliente:[]
-    Local:[]
+    cliente:Cliente[]
+    local:Local[]
     pedidos:number
     fechaRegistro:Date
 }

@@ -29,12 +29,6 @@ public class Local {
 	@Column(name = "celular", nullable = false, length = 70)
 	private String celular;
 	
-	@Column(name = "latitud", nullable = false, length = 70)
-	private Float latitud;
-	
-	@Column(name = "longitud", nullable = false, length = 70)
-	private Float longitud;
-	
 	@ManyToOne
 	@JoinColumn(name = "lavanderia_id")
 	private Lavanderia lavanderia;
@@ -77,22 +71,6 @@ public class Local {
 
 	public void setCelular(String celular) {
 		this.celular = celular;
-	}
-
-	public Float getLatitud() {
-		return latitud;
-	}
-
-	public void setLatitud(Float latitud) {
-		this.latitud = latitud;
-	}
-
-	public Float getLongitud() {
-		return longitud;
-	}
-
-	public void setLongitud(Float longitud) {
-		this.longitud = longitud;
 	}
 
 	public Lavanderia getLavanderia() {

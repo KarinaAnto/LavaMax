@@ -35,12 +35,24 @@ public class Servicio {
 	private Pago pago;
 	
 	@ManyToOne
+	@JoinColumn(name = "producto_id")
+	private Producto producto;
+	
+	@ManyToOne
 	@JoinColumn(name = "local_id")
 	private Local local;
 	
 	@ManyToOne
 	@JoinColumn(name = "estado_id")
 	private Estado estado;
+
+	public Producto getProducto() {
+		return producto;
+	}
+
+	public void setProducto(Producto producto) {
+		this.producto = producto;
+	}
 
 	public Integer getId() {
 		return id;

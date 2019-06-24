@@ -3,34 +3,34 @@ import { HttpClient } from '@angular/common/http';
 import { HOST } from '../_shared/var.constant';
 import { Subject } from 'rxjs';
 
-import { Servicio } from './../_model/servicio';
+import { Pago } from './../_model/pago';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ServicioService {
+export class PagoService {
 
-  servicioCambio = new Subject<Servicio[]>();
+  pagoCambio = new Subject<Pago[]>();
   mensaje = new Subject<string>();
 
-  url: string=`${HOST}/servicios`
+  url: string=`${HOST}/pagos`
 
   constructor(private http: HttpClient) { }
 
   listar() {
-    return this.http.get<Servicio[]>(this.url);
+    return this.http.get<Pago[]>(this.url);
   }
 
   listId(id: number) {
-    return this.http.get<Servicio>(`${this.url}/${id}`);
+    return this.http.get<Pago>(`${this.url}/${id}`);
   }
 
-  registrar(servicio: Servicio) {
-    return this.http.post(this.url, servicio);
+  registrar(pago: Pago) {
+    return this.http.post(this.url, pago);
   }
 
-  modificar(servicio: Servicio) {
-    return this.http.put(this.url, servicio);
+  modificar(pago: Pago) {
+    return this.http.put(this.url, pago);
   }
 
   eliminar(id: number) {

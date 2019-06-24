@@ -18,10 +18,10 @@ public class DetalleProducto {
 	private Integer id;
 	
 	@Column(name = "cantidad", nullable = false, length = 70)
-	private String cantidad;
+	private Integer cantidad;
 	
 	@Column(name = "preciokilo", nullable = false, length = 70)
-	private String precioKilo;
+	private Float precioKilo;
 
 	public Integer getId() {
 		return id;
@@ -31,19 +31,20 @@ public class DetalleProducto {
 		this.id = id;
 	}
 
-	public String getCantidad() {
+	public Integer getCantidad() {
 		return cantidad;
 	}
 
-	public void setCantidad(String cantidad) {
+	public void setCantidad(Integer cantidad) {
 		this.cantidad = cantidad;
 	}
 
-	public String getPrecioKilo() {
+	public Float getPrecioKilo() {
 		return precioKilo;
 	}
 
-	public void setPrecioKilo(String precioKilo) {
+	public void setPrecioKilo(Float precioKilo) {
 		this.precioKilo = precioKilo;
 	}
+	
 }

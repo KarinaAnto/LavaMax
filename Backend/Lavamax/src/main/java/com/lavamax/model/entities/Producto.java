@@ -28,6 +28,10 @@ public class Producto {
 	@JoinColumn(name = "catalogo_id")
 	private Catalogo catalogo;
 
+	@ManyToOne
+	@JoinColumn(name = "servicio_id")
+	private Servicio servicio;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -58,5 +62,13 @@ public class Producto {
 
 	public void setCatalogo(Catalogo catalogo) {
 		this.catalogo = catalogo;
+	}
+
+	public Servicio getServicio() {
+		return servicio;
+	}
+
+	public void setServicio(Servicio servicio) {
+		this.servicio = servicio;
 	}	
 }

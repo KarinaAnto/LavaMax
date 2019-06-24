@@ -1,2 +1,4 @@
-export class Tipopago {
+export class TipoPago  {
+    id:number
+    nombreTipoPago:string
 }

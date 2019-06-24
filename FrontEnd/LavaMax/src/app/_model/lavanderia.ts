@@ -1,7 +1,7 @@
 export class Lavanderia {
     id:number
-    nombre:string
+    nombres:string
     telefono:string
-    cantidadLocal:number
+    cantidadLocales:number
     ruc:string
 }

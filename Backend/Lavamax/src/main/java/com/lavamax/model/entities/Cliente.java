@@ -29,12 +29,6 @@ public class Cliente {
 	@Column(name = "celular", nullable = false, length = 70)
 	private String celular;
 	
-	@Column(name = "latitud", nullable = false, length = 70)
-	private Float latitud;
-	
-	@Column(name = "longitud", nullable = false, length = 70)
-	private Float longitud;
-	
 	@Column(name = "dni", nullable = false, length = 70)
 	private String dni;
 	
@@ -84,23 +78,6 @@ public class Cliente {
 	public void setCelular(String celular) {
 		this.celular = celular;
 	}
-
-	public Float getLatitud() {
-		return latitud;
-	}
-
-	public void setLatitud(Float latitud) {
-		this.latitud = latitud;
-	}
-
-	public Float getLongitud() {
-		return longitud;
-	}
-
-	public void setLongitud(Float longitud) {
-		this.longitud = longitud;
-	}
-
 	public String getDni() {
 		return dni;
 	}

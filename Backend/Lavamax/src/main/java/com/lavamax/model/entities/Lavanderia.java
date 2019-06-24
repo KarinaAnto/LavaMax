@@ -24,6 +24,17 @@ public class Lavanderia {
 	@Column(name = "cantidadLocales", nullable = false, length = 70)
 	private Integer cantidadLocales;
 
+	@Column(name = "ruc", nullable = false, length = 70)
+	private String ruc;
+	
+	public String getRuc() {
+		return ruc;
+	}
+
+	public void setRuc(String ruc) {
+		this.ruc = ruc;
+	}
+
 	public Integer getId() {
 		return id;
 	}

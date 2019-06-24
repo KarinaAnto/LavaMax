@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -25,6 +27,10 @@ public class Publicacion {
 	
 	@Column(name = "tipo", nullable = false, length = 70)
 	private String tipo;
+	
+	@ManyToOne
+	@JoinColumn(name = "local_id")
+	private Local local;
 
 	public Integer getId() {
 		return id;
@@ -64,6 +70,14 @@ public class Publicacion {
 
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
+	}
+
+	public Local getLocal() {
+		return local;
+	}
+
+	public void setLocal(Local local) {
+		this.local = local;
 	}
 	
 	

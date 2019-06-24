@@ -22,7 +22,11 @@ public class Catalogo {
 	
 	@Column(name = "tipo", nullable = false, length = 70)
 	private String tipo;
-
+	
+	@ManyToOne
+	@JoinColumn(name = "local_id")
+	private Local local;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -45,5 +49,13 @@ public class Catalogo {
 
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
+	}
+
+	public Local getLocal() {
+		return local;
+	}
+
+	public void setLocal(Local local) {
+		this.local = local;
 	}	
 }

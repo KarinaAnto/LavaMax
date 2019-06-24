@@ -2,11 +2,9 @@ import { Lavanderia } from './lavanderia';
 
 export class Local {
     id:number
-    nombre:string
-    apellido:string
+    nombres:string
     direccion:string
+    telefono:string
     celular:string
-    latitud:string
-    longitud:string
     Lavanderia:Lavanderia
 }
