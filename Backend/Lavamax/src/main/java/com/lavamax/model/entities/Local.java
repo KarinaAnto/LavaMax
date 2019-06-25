@@ -1,12 +1,17 @@
 package com.lavamax.model.entities;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -32,7 +37,23 @@ public class Local {
 	@ManyToOne
 	@JoinColumn(name = "lavanderia_id")
 	private Lavanderia lavanderia;
-
+	
+	@OneToMany(mappedBy = "local", cascade = { CascadeType.PERSIST, CascadeType.MERGE,
+			CascadeType.REMOVE }, fetch = FetchType.LAZY)
+	private List<Servicio> servicios;
+	
+	@OneToMany(mappedBy = "local", cascade = { CascadeType.PERSIST, CascadeType.MERGE,
+			CascadeType.REMOVE }, fetch = FetchType.LAZY)
+	private List<Publicacion> publicaciones;
+	
+	@OneToMany(mappedBy = "local", cascade = { CascadeType.PERSIST, CascadeType.MERGE,
+			CascadeType.REMOVE }, fetch = FetchType.LAZY)
+	private List<Cliente> clientes;
+	
+	@OneToMany(mappedBy = "local", cascade = { CascadeType.PERSIST, CascadeType.MERGE,
+			CascadeType.REMOVE }, fetch = FetchType.LAZY)
+	private List<Catalogo> catalogos;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -79,6 +100,38 @@ public class Local {
 
 	public void setLavanderia(Lavanderia lavanderia) {
 		this.lavanderia = lavanderia;
+	}
+
+	public List<Servicio> getServicios() {
+		return servicios;
+	}
+
+	public void setServicios(List<Servicio> servicios) {
+		this.servicios = servicios;
+	}
+
+	public List<Publicacion> getPublicaciones() {
+		return publicaciones;
+	}
+
+	public void setPublicaciones(List<Publicacion> publicaciones) {
+		this.publicaciones = publicaciones;
+	}
+
+	public List<Cliente> getClientes() {
+		return clientes;
+	}
+
+	public void setClientes(List<Cliente> clientes) {
+		this.clientes = clientes;
+	}
+
+	public List<Catalogo> getCatalogos() {
+		return catalogos;
+	}
+
+	public void setCatalogos(List<Catalogo> catalogos) {
+		this.catalogos = catalogos;
 	}
 	
 	

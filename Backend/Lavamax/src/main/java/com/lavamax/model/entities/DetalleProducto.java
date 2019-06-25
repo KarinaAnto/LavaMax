@@ -20,9 +20,14 @@ public class DetalleProducto {
 	@Column(name = "cantidad", nullable = false, length = 70)
 	private Integer cantidad;
 	
-	@Column(name = "preciokilo", nullable = false, length = 70)
-	private Float precioKilo;
-
+	@ManyToOne
+	@JoinColumn(name = "producto_id")
+	private Producto producto;
+	
+	@ManyToOne
+	@JoinColumn(name = "producto_id")
+	private Servicio servicio;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -39,12 +44,21 @@ public class DetalleProducto {
 		this.cantidad = cantidad;
 	}
 
-	public Float getPrecioKilo() {
-		return precioKilo;
+	public Producto getProducto() {
+		return producto;
 	}
 
-	public void setPrecioKilo(Float precioKilo) {
-		this.precioKilo = precioKilo;
+	public void setProducto(Producto producto) {
+		this.producto = producto;
 	}
+
+	public Servicio getServicio() {
+		return servicio;
+	}
+
+	public void setServicio(Servicio servicio) {
+		this.servicio = servicio;
+	}
+
 	
 }

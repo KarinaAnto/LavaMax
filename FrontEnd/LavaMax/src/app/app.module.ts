@@ -15,6 +15,23 @@ import { DetalleProductoComponent } from './pages/detalle-producto/detalle-produ
 import { CatalogoComponent } from './pages/catalogo/catalogo.component';
 import { PublicacionesComponent } from './pages/publicaciones/publicaciones.component';
 import { ClientesComponent } from './pages/clientes/clientes.component';
+import { CatalogoEdicionComponent } from './pages/catalogo/catalogo-edicion/catalogo-edicion.component';
+import { LavanderiaEdicionComponent } from './pages/lavanderia/lavanderia-edicion/lavanderia-edicion.component';
+import { LocalEdicionComponent } from './pages/local/local-edicion/local-edicion.component';
+import { ClienteComponent } from './pages/cliente/cliente.component';
+import { ClienteEdicionComponent } from './pages/cliente/cliente-edicion/cliente-edicion.component';
+import { ServiciosComponent } from './pages/servicios/servicios.component';
+import { ServicioComponent } from './pages/servicio/servicio.component';
+import { ServicoEdicionComponent } from './pages/servicio/servico-edicion/servico-edicion.component';
+import { PublicacionComponent } from './pages/publicacion/publicacion.component';
+import { PublicacionEdicionComponent } from './pages/publicacion/publicacion-edicion/publicacion-edicion.component';
+import { TipopagoComponent } from './pages/tipopago/tipopago.component';
+import { TipopagoEdicionComponent } from './pages/tipopago/tipopago-edicion/tipopago-edicion.component';
+import { PagoComponent } from './pages/pago/pago.component';
+import { PagoEdicionComponent } from './pages/pago/pago-edicion/pago-edicion.component';
+import { ProductoComponent } from './pages/producto/producto.component';
+import { DetalleEdicionComponent } from './pages/detalle-producto/detalle-edicion/detalle-edicion.component';
+import { ProductoEdicionComponent } from './pages/producto/producto-edicion/producto-edicion.component';
 
 
 @NgModule({
@@ -28,7 +45,24 @@ import { ClientesComponent } from './pages/clientes/clientes.component';
     DetalleProductoComponent,
     CatalogoComponent,
     PublicacionesComponent,
-    ClientesComponent
+    ClientesComponent,
+    CatalogoEdicionComponent,
+    LavanderiaEdicionComponent,
+    LocalEdicionComponent,
+    ClienteComponent,
+    ClienteEdicionComponent,
+    ServiciosComponent,
+    ServicioComponent,
+    ServicoEdicionComponent,
+    PublicacionComponent,
+    PublicacionEdicionComponent,
+    TipopagoComponent,
+    TipopagoEdicionComponent,
+    PagoComponent,
+    PagoEdicionComponent,
+    ProductoComponent,
+    DetalleEdicionComponent,
+    ProductoEdicionComponent
   ],
   entryComponents: [DialogoComponent],
   imports: [

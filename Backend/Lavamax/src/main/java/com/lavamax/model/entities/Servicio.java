@@ -1,14 +1,18 @@
 package com.lavamax.model.entities;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -26,17 +30,9 @@ public class Servicio {
 	@Column(name = "fin", nullable = false, length = 70)
 	private Date fin;
 	
-	//@ManyToOne
-	//@JoinColumn(name = "cliente_id")
-	//private Cliente cliente;
-	
 	@ManyToOne
 	@JoinColumn(name = "pago_id")
 	private Pago pago;
-	
-	@ManyToOne
-	@JoinColumn(name = "producto_id")
-	private Producto producto;
 	
 	@ManyToOne
 	@JoinColumn(name = "local_id")
@@ -46,14 +42,10 @@ public class Servicio {
 	@JoinColumn(name = "estado_id")
 	private Estado estado;
 
-	public Producto getProducto() {
-		return producto;
-	}
-
-	public void setProducto(Producto producto) {
-		this.producto = producto;
-	}
-
+	@OneToMany(mappedBy = "servicio", cascade = { CascadeType.PERSIST, CascadeType.MERGE,
+			CascadeType.REMOVE }, fetch = FetchType.LAZY)
+	private List<DetalleProducto> detalles;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -100,6 +92,14 @@ public class Servicio {
 
 	public void setEstado(Estado estado) {
 		this.estado = estado;
+	}
+
+	public List<DetalleProducto> getDetalles() {
+		return detalles;
+	}
+
+	public void setDetalles(List<DetalleProducto> detalles) {
+		this.detalles = detalles;
 	}
 	
 	

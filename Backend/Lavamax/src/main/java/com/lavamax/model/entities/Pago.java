@@ -1,12 +1,17 @@
 package com.lavamax.model.entities;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -22,7 +27,11 @@ public class Pago {
 	@ManyToOne
 	@JoinColumn(name = "tipoPago_id")
 	private TipoPago tipoPago;
-
+	
+	@OneToMany(mappedBy = "pago", cascade = { CascadeType.PERSIST, CascadeType.MERGE,
+			CascadeType.REMOVE }, fetch = FetchType.LAZY)
+	private List<Servicio> servicios;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -45,6 +54,14 @@ public class Pago {
 
 	public void setTipoPago(TipoPago tipoPago) {
 		this.tipoPago = tipoPago;
+	}
+
+	public List<Servicio> getServicios() {
+		return servicios;
+	}
+
+	public void setServicios(List<Servicio> servicios) {
+		this.servicios = servicios;
 	}
 	
 	

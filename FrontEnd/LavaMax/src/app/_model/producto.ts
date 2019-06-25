@@ -5,8 +5,8 @@ import { DetalleProducto } from './detalle-producto';
 export class Producto {
     id:number
     nombre:string
-    detalleProducto:DetalleProducto
-    catalogo:Catalogo
-    servicio:Servicio
+    // catalogo:Catalogo
+    // servicio:Servicio
     precioKilo:number
+    detalles:DetalleProducto[]
 }

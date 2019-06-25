@@ -1,4 +1,8 @@
 import { Lavanderia } from './lavanderia';
+import { Cliente } from './cliente';
+import { Servicio } from './servicio';
+import { Publicacion } from './publicacion';
+import { Catalogo } from './catalogo';
 
 export class Local {
     id:number
@@ -6,5 +10,9 @@ export class Local {
     direccion:string
     telefono:string
     celular:string
-    Lavanderia:Lavanderia
+    // lavanderia:Lavanderia
+    clientes:Cliente[]
+    servicios:Servicio[]
+    publicaciones:Publicacion[]
+    catalogos:Catalogo[]
 }

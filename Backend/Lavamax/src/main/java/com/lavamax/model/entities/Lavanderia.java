@@ -1,10 +1,15 @@
 package com.lavamax.model.entities;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -26,6 +31,10 @@ public class Lavanderia {
 
 	@Column(name = "ruc", nullable = false, length = 70)
 	private String ruc;
+	
+	@OneToMany(mappedBy = "lavanderia", cascade = { CascadeType.PERSIST, CascadeType.MERGE,
+			CascadeType.REMOVE }, fetch = FetchType.LAZY)
+	private List<Local> locales;
 	
 	public String getRuc() {
 		return ruc;
@@ -65,6 +74,14 @@ public class Lavanderia {
 
 	public void setCantidadLocales(Integer cantidadLocales) {
 		this.cantidadLocales = cantidadLocales;
+	}
+
+	public List<Local> getLocales() {
+		return locales;
+	}
+
+	public void setLocales(List<Local> locales) {
+		this.locales = locales;
 	}
 	
 	

@@ -4,4 +4,5 @@ export class Publicacion {
     descripcion:string
     imagen:string
     tipo:string
+    // local:Local
 }
