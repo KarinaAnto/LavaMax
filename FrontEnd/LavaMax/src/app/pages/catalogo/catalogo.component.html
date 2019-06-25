@@ -1,9 +1,9 @@
-<mat-toolbar>Registro de Catá</mat-toolbar>
+<mat-toolbar>Registro de Catalogo</mat-toolbar>
 
 <div class="example-container">
   <mat-form-field>
-    <mat-select placeholder="Paciente" [(value)]="idPacienteSeleccionado">
-      <mat-option *ngFor="let p of pacientes" [value]="p.id">{{p.nombres}} {{p.apellidos}}</mat-option>
+    <mat-select placeholder="Producto" [(value)]="idProductoSeleccionado">
+      <mat-option *ngFor="let p of productos" [value]="p.id">{{p.nombre}} {{p.precioKilo}}</mat-option>
     </mat-select>
   </mat-form-field>
 

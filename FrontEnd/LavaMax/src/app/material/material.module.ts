@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatPaginatorImpl } from './mat-paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule, MatSnackBarModule, MatButtonModule, MatSidenavModule, MatToolbarModule, MatIconModule, MatMenuModule, MatDividerModule, MatInputModule, MatTableModule, MatPaginatorModule, MatCardModule, MatFormFieldModule, MatPaginatorIntl, MAT_DATE_LOCALE } from '@angular/material';
+import { MatDialogModule, MatSnackBarModule, MatButtonModule, MatSidenavModule, MatToolbarModule, MatIconModule, MatMenuModule, MatDividerModule, MatInputModule, MatTableModule, MatPaginatorModule, MatCardModule, MatFormFieldModule, MatPaginatorIntl, MAT_DATE_LOCALE, MatSortModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule, MatListModule, MatExpansionModule, MatAutocompleteModule } from '@angular/material';
 
 @NgModule({
   declarations: [],
   imports: [
-    BrowserAnimationsModule,
     BrowserModule,
+    BrowserAnimationsModule,
     MatButtonModule,
     MatSidenavModule,
     MatToolbarModule,
@@ -21,7 +21,13 @@ import { MatDialogModule, MatSnackBarModule, MatButtonModule, MatSidenavModule, 
     MatCardModule,
     MatSnackBarModule,
     MatDialogModule,
-    MatFormFieldModule
+    MatSortModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatListModule,
+    MatExpansionModule,
+    MatAutocompleteModule
   ],
   exports:[
     MatButtonModule,
@@ -36,7 +42,13 @@ import { MatDialogModule, MatSnackBarModule, MatButtonModule, MatSidenavModule, 
     MatCardModule,
     MatSnackBarModule,
     MatDialogModule,
-    MatFormFieldModule
+    MatSortModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatListModule,
+    MatExpansionModule,
+    MatAutocompleteModule
   ],
   providers: [
     { provide: MatPaginatorIntl, useClass: MatPaginatorImpl },
