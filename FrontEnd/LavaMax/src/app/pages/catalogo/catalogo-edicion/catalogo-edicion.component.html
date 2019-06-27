@@ -1,3 +1,48 @@
-<p>
-  catalogo-edicion works!
-</p>
+<mat-toolbar>Registro de Catalogo</mat-toolbar>
+<mat-card-header [(ngModel)]="local.nombres"></mat-card-header>
+<mat-card>Ingrese los datos del catálogo</mat-card>
+
+<br>
+  
+<div class="example-container">
+
+  <div [hidden]="true">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="ID" [(ngModel)]="id">
+    </mat-form-field>
+  </div>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Nombre" [(ngModel)]="nombre">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Tipo" [(ngModel)]="tipo">
+  </mat-form-field>
+
+  <div [hidden]="nuevo">
+    <mat-form-field>
+      <mat-select placeholder="Producto" [(value)]="idProductoSeleccionado">
+        <mat-option *ngFor="let pr of productos" [value]="pr.id">
+          {{ pr.nombre }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" (click)="agregarProductos()">Agregar Producto</button>
+  
+    <mat-toolbar *ngFor="let p of ProductosSeleccionados; let i=index">
+       {{p.nombre}}
+       <span class="example-spacer"></span>
+    </mat-toolbar>
+  </div>
+
+  <button mat-raised-button color="primary" (click)="operar()" [disabled]="estadoBotonRegistrar()">
+    <mat-icon>done</mat-icon>
+    <span>Aceptar</span>
+  </button>
+
+  <button mat-raised-button color="accent" routerLink='/catalogo' type="button">
+    <mat-icon>close</mat-icon>
+    <span>Cancelar</span>
+  </button>
+</div>

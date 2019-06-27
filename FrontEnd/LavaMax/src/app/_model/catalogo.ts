@@ -5,6 +5,6 @@ export class Catalogo {
     id:number;
     nombre:string;
     tipo:string;
-    // local:Local
+    local:Local
     productos:Producto[]
 }

@@ -61,8 +61,8 @@ const routes: Routes = [
     {path:'nuevo', component:ServicoEdicionComponent},
     {path:'edicion/:id', component: ServicoEdicionComponent}] },
 
-  { path:'login', component:LoginComponent },
-  { path:'registro', component:RegistroComponent }, 
+  // { path:'login', component:LoginComponent },
+  // { path:'registro', component:RegistroComponent }, 
 
   // { path:'tipopago', component:TipoPagoComponent }, 
 ];

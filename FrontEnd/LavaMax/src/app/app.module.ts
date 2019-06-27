@@ -25,6 +25,7 @@ import { PagoEdicionComponent } from './pages/pago/pago-edicion/pago-edicion.com
 import { ProductoComponent } from './pages/producto/producto.component';
 import { DetalleEdicionComponent } from './pages/detalle-producto/detalle-edicion/detalle-edicion.component';
 import { ProductoEdicionComponent } from './pages/producto/producto-edicion/producto-edicion.component';
+import { LocalComponent } from './pages/local/local.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { ProductoEdicionComponent } from './pages/producto/producto-edicion/prod
     PagoEdicionComponent,
     ProductoComponent,
     DetalleEdicionComponent,
-    ProductoEdicionComponent
+    ProductoEdicionComponent,
+    LocalComponent
   ],
   // entryComponents: [DialogoComponent],
   imports: [

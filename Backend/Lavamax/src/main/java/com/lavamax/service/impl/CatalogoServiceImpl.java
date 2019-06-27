@@ -42,4 +42,9 @@ public class CatalogoServiceImpl implements CatalogoService{
 		return catalogoRepository.findAll();
 	}
 
+	@Override
+	public List<Catalogo> listLocalId(int localId) {
+		return catalogoRepository.findCatalogoByLocalId(localId);
+	}
+
 }

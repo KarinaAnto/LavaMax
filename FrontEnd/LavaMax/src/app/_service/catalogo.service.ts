@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HOST } from '../_shared/var.constant';
 import { Subject } from 'rxjs';
+import { ActivatedRoute } from "@angular/router";
 
 import { Catalogo } from './../_model/catalogo';
 
@@ -12,13 +13,19 @@ export class CatalogoService {
 
   catalogoCambio = new Subject<Catalogo[]>();
   mensaje = new Subject<string>();
+  lavanderia : number;
+  local : number;
 
-  url: string=`${HOST}/catalogos`
+  url: string=`${HOST}/lavanderias/${this.lavanderia}/locales/${this.local}/catalogos`
 
   constructor(private http: HttpClient) { }
 
-  listar() {
-    return this.http.get<Catalogo[]>(this.url);
+  // listar() {
+  //   return this.http.get<Catalogo[]>(this.url);
+  // }
+  listarPorCatalogo(localId : number){
+    localId = this.local
+    return this.http.get<Catalogo[]>(`${this.url}`);
   }
 
   listId(id: number) {

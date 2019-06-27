@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.lavamax.model.entities.Lavanderia;
 import com.lavamax.model.entities.Local;
 import com.lavamax.model.repository.LocalRepository;
 import com.lavamax.service.LocalService;
@@ -40,6 +41,11 @@ public class LocalServiceImpl implements LocalService {
 	@Override
 	public List<Local> listar() {
 		return localRepository.findAll();
+	}
+
+	@Override
+	public List<Local> listLocalByLavanderiaId(int lavanderiaId) {
+		return localRepository.findLocalByLavanderiaId(lavanderiaId);
 	}
 
 }

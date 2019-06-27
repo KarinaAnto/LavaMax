@@ -25,7 +25,7 @@ public class DetalleProducto {
 	private Producto producto;
 	
 	@ManyToOne
-	@JoinColumn(name = "producto_id")
+	@JoinColumn(name = "servicio_id")
 	private Servicio servicio;
 	
 	public Integer getId() {

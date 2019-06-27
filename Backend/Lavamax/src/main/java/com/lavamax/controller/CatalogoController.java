@@ -31,23 +31,28 @@ import io.swagger.annotations.ApiOperation;
 
 
 @RestController
-@RequestMapping("/catalogo")
-@CrossOrigin(origins = "http://localhost:8080")
+@RequestMapping("/lavanderias/{lavanderia}/locales/{local}/catalogos")
+//@CrossOrigin(origins = "http://localhost:8080")
 @Api(value = "Servicio REST para las catalogoes")
 public class CatalogoController {
 
 	@Autowired
 	private CatalogoService catalogoService;
 	
-	@ApiOperation("Rertorna una lista de publicidades")
+//	@ApiOperation("Rertorna una lista de catalogos")
+//	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+//	public ResponseEntity<List<Catalogo>> listar(){
+//		List<Catalogo> catalogoes = new ArrayList<>();
+//		catalogoes = catalogoService.listar();
+//		return new ResponseEntity<List<Catalogo>>(catalogoes, HttpStatus.OK);
+//	}
+	@ApiOperation("Rertorna una lista de catalogos")
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Catalogo>> listar(){
-		List<Catalogo> catalogoes = new ArrayList<>();
-		catalogoes = catalogoService.listar();
-		return new ResponseEntity<List<Catalogo>>(catalogoes, HttpStatus.OK);
+	public ResponseEntity<List<Catalogo>> listLocalId(@PathVariable("local") Integer localId){
+		List<Catalogo> catalogos = new ArrayList<>();
+		catalogos = catalogoService.listLocalId(localId);
+		return new ResponseEntity<List<Catalogo>>(catalogos, HttpStatus.OK);
 	}
-	
-	
 	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Catalogo> listarId(@PathVariable("id") Integer id) {

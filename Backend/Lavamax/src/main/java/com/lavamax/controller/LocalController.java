@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.lavamax.exception.ModeloNotFoundException;
+import com.lavamax.model.entities.Lavanderia;
 import com.lavamax.model.entities.Local;
 import com.lavamax.service.LavanderiaService;
 import com.lavamax.service.LocalService;
@@ -33,8 +34,8 @@ import io.swagger.annotations.ApiOperation;
 
 
 @RestController
-@RequestMapping("/locales")
-@CrossOrigin(origins = "http://localhost:8080")
+@RequestMapping("/lavanderias/{lavanderia}/locales")
+//@CrossOrigin(origins = "http://localhost:8080")
 @Api(value = "Servicio REST para los locales")
 public class LocalController {
 
@@ -45,13 +46,20 @@ public class LocalController {
 	private LavanderiaService lavanderiaService;
 	
 	@ApiOperation("Rertorna una lista de pacientes")
+//	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+//	public ResponseEntity<List<Local>> listar(){
+//		List<Local> locales = new ArrayList<>();
+//		locales = localService.listar();
+//		return new ResponseEntity<List<Local>>(locales, HttpStatus.OK);
+//	}
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Local>> listar(){
+	public ResponseEntity<List<Local>> listarPorLavanderia
+	(@PathVariable("lavanderia") Integer lavanderia){
+	//(@Valid @RequestBody int idLavanderia){
 		List<Local> locales = new ArrayList<>();
-		locales = localService.listar();
+		locales = localService.listLocalByLavanderiaId(idLavanderia);
 		return new ResponseEntity<List<Local>>(locales, HttpStatus.OK);
 	}
-	
 	
 	
 	@GetMapping(value = "/{id}")
