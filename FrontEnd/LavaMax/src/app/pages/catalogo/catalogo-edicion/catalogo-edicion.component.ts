@@ -106,7 +106,7 @@ operar(){
       if (!this.nuevo) {
         this.catalogoService.modificar(this.catalogo).subscribe(
           data => {
-            this.catalogoService.listarPorCatalogo(this.catalogo.local.id).subscribe(catalogos => {
+            this.catalogoService.listar().subscribe(catalogos => {
               this.catalogoService.catalogoCambio.next(catalogos);
               this.catalogoService.mensaje.next("Se registro");
           });
@@ -114,7 +114,7 @@ operar(){
       } else {
         this.catalogoService.registrar(this.catalogo).subscribe(
           data => {
-            this.catalogoService.listarPorCatalogo(this.catalogo.local.id).subscribe(catalogos => {
+            this.catalogoService.listar().subscribe(catalogos => {
               this.catalogoService.catalogoCambio.next(catalogos);
               this.catalogoService.mensaje.next("Se registro");
           });

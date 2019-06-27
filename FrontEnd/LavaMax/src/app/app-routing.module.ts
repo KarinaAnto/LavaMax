@@ -8,7 +8,6 @@ import { LocalEdicionComponent } from './pages/local/local-edicion/local-edicion
 import { LavanderiaEdicionComponent } from './pages/lavanderia/lavanderia-edicion/lavanderia-edicion.component';
 import { CatalogoEdicionComponent } from './pages/catalogo/catalogo-edicion/catalogo-edicion.component';
 import { ClienteEdicionComponent } from './pages/cliente/cliente-edicion/cliente-edicion.component';
-import { DetalleProductoComponent } from './pages/detalle-producto/detalle-producto.component';
 import { PagoComponent } from './pages/pago/pago.component';
 import { PagoEdicionComponent } from './pages/pago/pago-edicion/pago-edicion.component';
 import { PublicacionComponent } from './pages/publicacion/publicacion.component';
@@ -16,7 +15,6 @@ import { ProductoEdicionComponent } from './pages/producto/producto-edicion/prod
 import { ServicioComponent } from './pages/servicio/servicio.component';
 import { CatalogoComponent } from './pages/catalogo/catalogo.component';
 import { ClienteComponent } from './pages/cliente/cliente.component';
-import { DetalleEdicionComponent } from './pages/detalle-producto/detalle-edicion/detalle-edicion.component';
 import { ProductoComponent } from './pages/producto/producto.component';
 import { PublicacionEdicionComponent } from './pages/publicacion/publicacion-edicion/publicacion-edicion.component';
 import { ServicoEdicionComponent } from './pages/servicio/servico-edicion/servico-edicion.component';
@@ -31,11 +29,7 @@ const routes: Routes = [
     {path:'nuevo', component:ClienteEdicionComponent},
     {path:'edicion/:id', component: ClienteEdicionComponent}] },
 
-  { path:'detalle-producto', component:DetalleProductoComponent, children:[
-    {path:'nuevo', component:DetalleEdicionComponent},
-    {path:'edicion/:id', component: DetalleEdicionComponent}] },
-
-  // { path:'estado', component:EstadoC },
+    // { path:'estado', component:EstadoC },
     
   { path:'lavanderia', component:LavanderiaComponent, children:[
     {path:'nuevo', component:LavanderiaEdicionComponent},

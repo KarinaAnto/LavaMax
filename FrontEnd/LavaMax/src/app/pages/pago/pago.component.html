@@ -1,3 +1,50 @@
-<p>
-  pago works!
-</p>
+<mat-toolbar>Pago</mat-toolbar>
+
+<div class="example-container mat-elevation-z8">
+
+  <div class="example-header">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar médico">
+    </mat-form-field>
+  </div>
+
+  <mat-table [dataSource]="dataSource" matSort>
+
+
+    <ng-container matColumnDef="idPago">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> IDMEDICO </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="monto">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Nombres </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.monto}} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="tipoPago">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Apellidos </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.tipoPago}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="acciones">
+      <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <button mat-button color="primary" [routerLink]="['edicion', row.id]">Actualizar</button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;">
+    </mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
+
+<br>
+
+<button mat-fab color="accent" routerLink='/pago/nuevo' style="float: right; margin-right: 20px">
+  <mat-icon>create</mat-icon>
+</button>

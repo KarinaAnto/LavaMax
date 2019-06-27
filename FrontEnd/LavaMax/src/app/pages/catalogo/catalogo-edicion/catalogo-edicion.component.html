@@ -30,7 +30,7 @@
   
     <button mat-raised-button color="primary" (click)="agregarProductos()">Agregar Producto</button>
   
-    <mat-toolbar *ngFor="let p of ProductosSeleccionados; let i=index">
+    <mat-toolbar *ngFor="let p of productosSeleccionados; let i=index">
        {{p.nombre}}
        <span class="example-spacer"></span>
     </mat-toolbar>

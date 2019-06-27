@@ -57,7 +57,7 @@ public class LocalController {
 	(@PathVariable("lavanderia") Integer lavanderia){
 	//(@Valid @RequestBody int idLavanderia){
 		List<Local> locales = new ArrayList<>();
-		locales = localService.listLocalByLavanderiaId(idLavanderia);
+		locales = localService.listLocalByLavanderiaId(lavanderia);
 		return new ResponseEntity<List<Local>>(locales, HttpStatus.OK);
 	}
 	

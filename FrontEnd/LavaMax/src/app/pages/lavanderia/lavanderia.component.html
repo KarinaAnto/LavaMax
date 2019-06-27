@@ -13,7 +13,7 @@
 
     <ng-container matColumnDef="idLavanderia">
       <mat-header-cell *matHeaderCellDef mat-sort-header> IDLAVANERIA </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.idLavanderia}} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
     </ng-container>
 
 
@@ -30,7 +30,7 @@
 
     <ng-container matColumnDef="cantidadLocales">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Nro. Locales </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.cantidadLocales}} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{row.locales.lenght}} </mat-cell>
     </ng-container>
 
 
@@ -51,6 +51,6 @@
 
 <br>
 <!-- (click)="openDialog()"  -->
-<button mat-fab color="accent" style="float: right; margin-right: 20px">
+<button mat-fab color="accent" style="float: right; margin-right: 20px" routerLink='/catalogo/nuevo' >
   <mat-icon>create</mat-icon>
 </button>

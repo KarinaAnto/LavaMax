@@ -16,16 +16,12 @@ export class CatalogoService {
   lavanderia : number;
   local : number;
 
-  url: string=`${HOST}/lavanderias/${this.lavanderia}/locales/${this.local}/catalogos`
+  url: string=`${HOST}/catalogos`
 
   constructor(private http: HttpClient) { }
 
-  // listar() {
-  //   return this.http.get<Catalogo[]>(this.url);
-  // }
-  listarPorCatalogo(localId : number){
-    localId = this.local
-    return this.http.get<Catalogo[]>(`${this.url}`);
+  listar() {
+    return this.http.get<Catalogo[]>(this.url);
   }
 
   listId(id: number) {
